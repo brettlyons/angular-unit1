@@ -1,15 +1,61 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="myApp">
   <head>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js'></script>
+    <script src='raw2waydatabinding.js'></script>
+    <script>
+      angular.module('myApp',[])
+        .controller('myAppController', function($scope) {
+          $scope.digitsOfPi = 2;
+      })
+    </script>
     <meta charset="utf-8">
     <title>{{ greeting }} World</title>
   </head>
   <body>
     <p>{{1 + 6}}<p>
     <br>
-    <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
+    <p>Say something to the world <input type="text" id="say" ng-model="greeting" ng-init="greeting='Hello, '"></p>
     <p>{{ greeting }} world!</p>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <form>
+      <input type="text" id="typebox" ng-model="name" placeholder="What is your name?">
+    </form>
+    <h1>My name is: {{name}}</h1>
+    <select name="catsndogs" ng-model="creature">
+      <option>Dogs</option>
+      <option>Cats</option>
+      <option>Cats and Dogs</option>
+      <option>Neither</option>
+    </select>
+    <h1>I love: {{creature}}!</h1>
+    <p>
+    <p>
+    {{3.14159265359 | currency:"Euro € "}}
+    <p>
+    <p>
+    <h1>Say something:</h1>
+    <input type='text' id='soundbox' ng-model="dog">
+    <p>
+    <h2>Yelling: {{dog | uppercase}}</h2>
+    <h2>Whispering:{{dog | lowercase}} </h2>
+    <p>
+    <p>
+    <h1>How many digits of pi would you like?</h1>
+    <select name="digsOfPi" ng-model="digitsOfPi" ng-init="digitsOfPi=2">
+      <option>1</option>
+      <option selected="">2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+    </select>
+    <h2>Here you go, the first 
+    <ng-pluralize count="digitsOfPi" when="{'1':'{} digit of Pi',
+                                              'other':'{} digits of Pi'}">
+    </ng-pluralize>
+    </h2>
+    <p>
+    <h2>{{3.14159265359 | number: digitsOfPi }}</h2>
   </body>
 </html>

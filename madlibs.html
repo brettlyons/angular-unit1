@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js'></script>
+    <meta charset="utf-8">
+    <title>Mad Libs</title>
+  </head>
+  <body>
+    <label>Boy's Name<input type="text" ng-model="boyname" placeholder="Enter a boys name..."></label>
+    <p>
+    <label>Adjective<input type="text" ng-model="firstAdj" placeholder="Enter an adjective..."></label>
+    <p>
+    <label>Plural Noun<input type="text" ng-model="firstPluralN" placeholder="Enter a plural noun..."></label>
+    <p>
+    <label>An insect, plural<input type="text" ng-model="pluralInsects" placeholder="Enter an insect, plural"></label>
+    <p>
+    <label>Plural noun<input type="text" ng-model="secondPluralN" placeholder="Enter a plural noun..."></label>
+    <p>
+    <label>A verb ending in s<input type="text" ng-model="endsInSV" placeholder="Enter a verb ending in s"></label>
+    <p>
+      <h3>I'm in love with <span>{{boyname}}</span>. He's so <span>{{firstAdj}}</span>! He has big flat <span>{{firstPluralN}}</span>, and when our <span>{{pluralInsects}}</span> meet, I get <span>{{secondPluralN}}</span> in my stomach. I've fallen for him like a ton of <span>{{endsInSV}}</span>, and he shuffles for me, too. But I think he's got another girlfriend. What should I do?</h3>
+  </body>
+</html>
