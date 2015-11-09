@@ -10,7 +10,9 @@
     <h3>The number is: {{number}}</h3> 
     <button ng-click="pickRandomNumber()">Pick Random Number</button>
     <h3>Word reverser</h3>
-    <input type="text" ng-model="theWord">
+    <form>
+      <input type="text" ng-model="theWord">
+    </form>
     <button ng-click="reverseWord()">Reverse Word</button>
     <h4> The word is: {{ theWord }} </h4>
   </body>
